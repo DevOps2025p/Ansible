@@ -1,5 +1,6 @@
 - name: uninstall nginx
   hosts: frontend
+  become: yes
   tasks:
   - name: nginx remove
     ansible.builtin.package:
