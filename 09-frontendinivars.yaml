@@ -1,0 +1,7 @@
+---
+- name: inventory varibles for forntrnd servers
+  hosts: frontend
+  tasks:
+  - name: frontendvariables
+    ansible.builtin.debug:
+      msg: "Hello {{ course }}, Course Duration: {{ duration }}, Trainer: {{ trainer }}"
