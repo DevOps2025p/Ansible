@@ -21,3 +21,12 @@
         trainer: joindevops
     ansible.builtin.debug:
       msg: "course info {{ course | dict2items }}"
+
+  - name: item to dictonary
+    vars:
+      course:
+      - {'key': 'name', 'value': 'Ansible'}
+      - {'key': 'duration', 'value': '10 hr'}
+      - {'key': 'trainer', 'value': 'joindevops'}
+    ansible.builtin.debug:
+      msg: "course info {{ course | items2dict }}"
