@@ -30,3 +30,9 @@
       - {'key': 'trainer', 'value': 'joindevops'}
     ansible.builtin.debug:
       msg: "course info {{ course | items2dict }}"
+
+  - name: check ip adress
+    vars:
+      ip: "300.198.145"
+    ansible.builtin.debug:
+      msg: {{ ip | ansible.utils.ipaddr }}
