@@ -20,4 +20,4 @@
         duration: 10 hr 
         trainer: joindevops
     ansible.builtin.debug:
-      msg: "course info {{ course | dic2items }}"
+      msg: "course info {{ course | dict2items }}"
