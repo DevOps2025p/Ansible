@@ -1,0 +1,6 @@
+---
+- name:
+  hosts: frontend
+  tasks: 
+    -name: redirect the output using shell command
+     ansible.builtin.command: "ls -ltr > /tmp/output.txt"
