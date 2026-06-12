@@ -1,0 +1,19 @@
+---
+- name: Uninstall all NGINX-related packages
+  hosts: frontend
+  become: yes
+  gather_facts: true
+
+  tasks:
+    - name: Remove all nginx-related packages
+      ansible.builtin.package:
+        name:
+          - nginx
+          - nginx-core
+          - nginx-common
+          - nginx-full
+        state: absent
+    - name: Remove leftover nginx files
+      ansible.builtin.file:
+        path: /etc/nginx
+        state: absent
