@@ -2,23 +2,13 @@
 - name: Install Nginx and Run a service
   hosts: frontend
   become: true
-  gather_facts: false
   tasks:
-    - name: Check if host is reachable
-      ansible.builtin.ping:
-      ignore_unreachable: true
-      register: host_status
-
-    - name: Install Nginx
-      ansible.builtin.package:
-        name: nginx
-        state: present
-      # Only run if the previous task (ping) did not fail
-      when: not host_status.failed
-
-    - name: Start Nginx service
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: true
-      when: not host_status.failed
+  - name: Install Nginx
+    ansible.builtin.package:
+    name: nginx
+    state: present
+  - name: Start Nginx service
+    ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
