@@ -3,10 +3,9 @@
   hosts: frontend,database
   become: true
   gather_facts: false
-  strategy: free
   tasks:
     - name: Check if host is reachable
-      ansible.builtin.ping: 
+      ansible.builtin.ping:
       ignore_unreachable: true
       register: host_status
 
@@ -14,11 +13,12 @@
       ansible.builtin.package:
         name: nginx
         state: present
-      when: host_status.ping is succeeded
+      # Only run if the previous task (ping) did not fail
+      when: not host_status.failed
 
     - name: Start Nginx service
       ansible.builtin.service:
         name: nginx
         state: started
         enabled: true
-      when: host_status.ping is succeeded
+      when: not host_status.failed
