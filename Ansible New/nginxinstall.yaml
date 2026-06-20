@@ -3,6 +3,11 @@
   hosts: frontend,database
   become: true
   tasks:
+    - name: Check if host is reachable
+      ansible.builtin.ping: 
+      ignore_unreachable: true
+      register: host_status
+      
     - name: Install Nginx
       ansible.builtin.package:
         name: nginx
