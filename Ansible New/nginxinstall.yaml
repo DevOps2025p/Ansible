@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx and Run a service
-  hosts: frontend,database
+  hosts: frontend
   become: true
   gather_facts: false
   tasks:
