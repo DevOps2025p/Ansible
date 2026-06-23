@@ -11,9 +11,13 @@
       msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
 
   - name: Print couse details agian
+    vars:
+      COURSE: "DEVOPS WITH AWS"
     ansible.builtin.debug:
       msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
 
   - name: Print couse details again and again
+    vars:
+      COURSE: "Terraform"
     ansible.builtin.debug:
       msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
