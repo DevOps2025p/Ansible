@@ -9,3 +9,11 @@
   - name: Print couse details
     ansible.builtin.debug:
       msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
+
+  - name: Print couse details agian
+    ansible.builtin.debug:
+      msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
+
+  - name: Print couse details again and again
+    ansible.builtin.debug:
+      msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
