@@ -1,0 +1,20 @@
+- name: datatype play
+  hosts: local
+  connection: local
+  vars:
+   COURSE: "Aws with devops"
+   DURATION: 2 months
+   TRAINER: "siva"
+   Is_ONLINE: true
+   TOOLS:
+   - "Jenkins"
+   - "Docker"
+   - "Kubernetes"
+   CONCEPTS:
+     CI: "Jenkins"
+     Scripting: "Shell, Ansible, Python"
+  tasks:
+  - name: Print the course details
+    ansible.builtin.debug:
+      msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Trainer: {{ TRAINER }}, Is Online: {{ Is_ONLINE }}, Tools: {{ TOOLS }}, Concepts: {{ CONCEPTS }}"
+   
