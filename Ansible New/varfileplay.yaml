@@ -1,0 +1,9 @@
+- name: varfile play
+  hosts: local
+  connection: local
+  vars_files:
+    - course.yaml
+  tasks:
+  - name: Print couse details from varfile
+    ansible.builtin.debug:
+      msg: "Course: {{ COURSE }}, Duration: {{ DURATION }}, Instructor: {{ INSTRUCTOR }}"
