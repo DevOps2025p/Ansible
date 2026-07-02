@@ -1,0 +1,13 @@
+- name: packages playbook
+  hosts: frontend
+  become: yes 
+  tasks:
+  - name: install packages
+    ansible.builtin.debug:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - "nginx"
+      - "httpd"
+      - "mysql"
+      - "php"
