@@ -61,7 +61,7 @@
       state: present
 
   - name: check products loaded or not
-    ansible.builtin.command: "mongo --host mongodb.ooty.online --eval 'db.getMongo().getDBNames().indexof"
+    ansible.builtin.command: mongo --host mongodb.ooty.online --eval 'db.getMongo().getDBNames().indexof("catalogue")'
     register: catalogue_output
 
   - name: print catalogue output
